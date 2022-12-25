@@ -1,1 +1,9 @@
-// TODO
+.headerContainer {
+  padding: 3rem 1rem;
+  background: var(--background);
+  
+  header {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+}
