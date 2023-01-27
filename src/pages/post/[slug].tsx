@@ -6,12 +6,10 @@ import { FiUser } from 'react-icons/fi';
 import { FaRegClock } from 'react-icons/fa';
 
 import Image from 'next/image';
-import { RichText } from 'prismic-dom';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
-import { getPrismicClient } from '../../services/prismic';
+import { getPrismicClient, PrismicConfig } from '../../services/prismic';
 
-import commonStyles from '../../styles/common.module.scss';
 import styles from './post.module.scss';
 import common from '../../styles/common.module.scss';
 
@@ -42,7 +40,7 @@ export default function Post({ post }: PostProps): ReactElement {
   return (
     <main className={common.main}>
       <div className={styles.banner}>
-        <Image src={Logo} alt="Banner do post" width={2250} height={1390} />
+        <img src={post.data.banner.url} alt="logo" />
       </div>
       <article className={styles.post}>
         <header>

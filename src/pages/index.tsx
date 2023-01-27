@@ -1,4 +1,4 @@
-import { GetStaticProps, GetStaticPropsContext } from 'next';
+import { GetStaticProps } from 'next';
 import { ReactElement } from 'react';
 import { TiCalendarOutline } from 'react-icons/ti';
 import { FiUser } from 'react-icons/fi';
@@ -12,7 +12,6 @@ import { getPrismicClient } from '../services/prismic';
 
 import commonStyles from '../styles/common.module.scss';
 import styles from './home.module.scss';
-import common from '../styles/common.module.scss';
 
 interface Post {
   uid?: string;
@@ -37,7 +36,7 @@ export default function Home({
   postsPagination: { results },
 }: HomeProps): ReactElement {
   return (
-    <main className={common.main}>
+    <main className={commonStyles.main}>
       <div className={styles.postsContainer}>
         {results?.map(result => (
           <div
@@ -48,7 +47,7 @@ export default function Home({
               <h1>{result.data.title}</h1>
             </Link>
             <p>{result.data.subtitle}</p>
-            <div className={common.info}>
+            <div className={commonStyles.info}>
               <span>
                 <TiCalendarOutline size={20} style={{ marginRight: '.5rem' }} />
                 {result.first_publication_date}

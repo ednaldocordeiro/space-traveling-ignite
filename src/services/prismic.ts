@@ -10,7 +10,7 @@ export interface PrismicConfig {
 export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
 
 export function getPrismicClient(config: PrismicConfig): prismic.Client {
-  const client = prismic.createClient(repositoryName, {
+  const client = prismic.createClient(sm.apiEndpoint, {
     accessToken: process.env.PRISMIC_ACCESS_TOKEN,
     routes: [
       {
